@@ -281,8 +281,9 @@ button {
   font-size: 2.25rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-gray-950);
-  line-height: 1.1;
+  line-height: 1.05;
 }
+
 
 .hero__description {
   font-size: 1rem;
@@ -448,6 +449,7 @@ button {
     line-height: 1;
     margin-bottom: 3rem;
   }
+
 
   .hero__description {
     font-size: var(--font-size-body);
