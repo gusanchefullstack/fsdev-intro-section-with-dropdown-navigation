@@ -424,48 +424,50 @@ button {
 
   /* Hero layout */
   .hero {
-    padding: 2rem 2.5rem 4rem;
+    padding: 3rem 2.5rem 4rem;
   }
 
   .hero__inner {
     flex-direction: row;
     align-items: flex-end;
-    max-width: 1200px;
+    max-width: 1110px;
     margin: 0 auto;
-    gap: 4rem;
+    gap: 6rem;
   }
 
   .hero__content {
     flex: 1;
     align-items: flex-start;
     text-align: left;
-    padding: 4rem 0 0;
-    justify-content: space-between;
-    gap: 2.5rem;
+    padding: 6.5rem 0 0;
+    gap: 0;
   }
 
   .hero__title {
-    font-size: 4.5rem;
+    font-size: 5rem;
     line-height: 1;
+    margin-bottom: 3rem;
   }
 
   .hero__description {
     font-size: var(--font-size-body);
+    line-height: 1.75;
+    margin-bottom: 3rem;
   }
 
   .hero__cta {
     padding: 1rem 2rem;
-    font-size: var(--font-size-body);
+    font-size: 1rem;
   }
 
   .hero__image {
-    flex: 1;
+    flex: 0 0 480px;
     max-width: 480px;
   }
 
   .hero__clients {
     gap: 2.5rem;
-    padding-top: 3rem;
+    padding-top: 5rem;
   }
 
   .hero__clients img {
