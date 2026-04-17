@@ -336,9 +336,30 @@ button {
 }
 
 /* ==============================
-   Desktop Styles (768px+)
+   Tablet Styles (768px+)
    ============================== */
 @media (min-width: 768px) {
+  .hero__content {
+    padding: 3rem 2rem 0;
+  }
+
+  .hero__title {
+    font-size: 2.75rem;
+  }
+
+  .hero__clients {
+    gap: 2rem;
+  }
+
+  .hero__clients img {
+    height: 20px;
+  }
+}
+
+/* ==============================
+   Desktop Styles (960px+)
+   ============================== */
+@media (min-width: 960px) {
   :root {
     --header-padding-x: 2.5rem;
     --header-padding-y: 1.25rem;
