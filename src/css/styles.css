@@ -1,0 +1,481 @@
+/* ==============================
+   CSS Custom Properties
+   ============================== */
+:root {
+  /* Colors */
+  --color-gray-50: hsl(0, 0%, 98%);
+  --color-gray-500: hsl(0, 0%, 41%);
+  --color-gray-950: hsl(0, 0%, 8%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-overlay: hsla(0, 0%, 0%, 0.75);
+
+  /* Typography */
+  --font-family: "Epilogue", sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-body: 1.125rem; /* 18px */
+
+  /* Spacing */
+  --header-padding-x: 1.5rem;
+  --header-padding-y: 1.25rem;
+}
+
+/* ==============================
+   Reset & Base
+   ============================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-500);
+  background-color: var(--color-gray-50);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ==============================
+   Header
+   ============================== */
+.header {
+  padding: var(--header-padding-y) var(--header-padding-x);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo img {
+  width: 84px;
+}
+
+.header__menu-toggle {
+  z-index: 100;
+}
+
+.header__menu-icon--close {
+  display: none;
+}
+
+.header__menu-toggle[aria-expanded="true"] .header__menu-icon--open {
+  display: none;
+}
+
+.header__menu-toggle[aria-expanded="true"] .header__menu-icon--close {
+  display: block;
+}
+
+/* ==============================
+   Navigation
+   ============================== */
+.nav {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.nav.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.nav__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-overlay);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav.is-open .nav__overlay {
+  opacity: 1;
+}
+
+.nav__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  max-width: 300px;
+  height: 100%;
+  background-color: var(--color-white);
+  padding: 5rem 1.5rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+.nav.is-open .nav__content {
+  transform: translateX(0);
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+  color: var(--color-gray-950);
+}
+
+.nav__link--dropdown {
+  padding: 0;
+}
+
+/* Arrow icons */
+.nav__arrow--up {
+  display: none;
+}
+
+.nav__link--dropdown[aria-expanded="true"] .nav__arrow--down {
+  display: none;
+}
+
+.nav__link--dropdown[aria-expanded="true"] .nav__arrow--up {
+  display: block;
+}
+
+/* ==============================
+   Dropdown
+   ============================== */
+.dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0 0 1.5rem;
+}
+
+.nav__link--dropdown[aria-expanded="true"] + .dropdown {
+  display: flex;
+}
+
+.dropdown__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  transition: color 0.2s ease;
+}
+
+.dropdown__link:hover {
+  color: var(--color-gray-950);
+}
+
+.dropdown__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ==============================
+   Auth Links
+   ============================== */
+.nav__auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.nav__auth-link {
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  transition: color 0.2s ease;
+}
+
+.nav__auth-link:hover {
+  color: var(--color-gray-950);
+}
+
+.nav__auth-link--register {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1.25rem;
+  border: 1.5px solid var(--color-gray-500);
+  border-radius: 14px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav__auth-link--register:hover {
+  border-color: var(--color-gray-950);
+  color: var(--color-gray-950);
+}
+
+/* ==============================
+   Hero Section
+   ============================== */
+.hero {
+  padding: 0 0 2rem;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.hero__image {
+  width: 100%;
+}
+
+.hero__image img {
+  width: 100%;
+  height: auto;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1rem 0;
+  gap: 1.5rem;
+}
+
+.hero__title {
+  font-size: 2.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-950);
+  line-height: 1.1;
+}
+
+.hero__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 45ch;
+}
+
+.hero__cta {
+  display: inline-block;
+  padding: 0.875rem 1.75rem;
+  background-color: var(--color-gray-950);
+  color: var(--color-gray-50);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  border-radius: 14px;
+  border: 2px solid var(--color-gray-950);
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hero__cta:hover {
+  background-color: transparent;
+  color: var(--color-gray-950);
+}
+
+.hero__clients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.hero__clients img {
+  height: 16px;
+  width: auto;
+}
+
+/* ==============================
+   Attribution
+   ============================== */
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ==============================
+   Desktop Styles (768px+)
+   ============================== */
+@media (min-width: 768px) {
+  :root {
+    --header-padding-x: 2.5rem;
+    --header-padding-y: 1.25rem;
+  }
+
+  /* Hide hamburger */
+  .header__menu-toggle {
+    display: none;
+  }
+
+  /* Navigation becomes horizontal */
+  .nav {
+    position: static;
+    pointer-events: auto;
+    visibility: visible;
+    flex: 1;
+    margin-left: 3.5rem;
+  }
+
+  .nav__overlay {
+    display: none;
+  }
+
+  .nav__content {
+    position: static;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    background-color: transparent;
+    padding: 0;
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav__item--dropdown {
+    position: relative;
+  }
+
+  .nav__link {
+    font-size: 0.875rem;
+  }
+
+  /* Dropdown - absolute positioned */
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 1rem);
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px hsla(0, 0%, 0%, 0.15);
+    min-width: max-content;
+  }
+
+  /* Features dropdown aligns to the right */
+  #dropdown-features {
+    right: 0;
+  }
+
+  /* Company dropdown aligns to the left */
+  #dropdown-company {
+    left: 0;
+  }
+
+  /* Auth section */
+  .nav__auth {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+    gap: 1.5rem;
+  }
+
+  .nav__auth-link--register {
+    width: auto;
+  }
+
+  /* Hero layout */
+  .hero {
+    padding: 2rem 2.5rem 4rem;
+  }
+
+  .hero__inner {
+    flex-direction: row;
+    align-items: flex-end;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem;
+  }
+
+  .hero__content {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    padding: 4rem 0 0;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  .hero__title {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .hero__description {
+    font-size: var(--font-size-body);
+  }
+
+  .hero__cta {
+    padding: 1rem 2rem;
+    font-size: var(--font-size-body);
+  }
+
+  .hero__image {
+    flex: 1;
+    max-width: 480px;
+  }
+
+  .hero__clients {
+    gap: 2.5rem;
+    padding-top: 3rem;
+  }
+
+  .hero__clients img {
+    height: 26px;
+  }
+}
+
+/* ==============================
+   Body scroll lock when menu is open
+   ============================== */
+body.menu-open {
+  overflow: hidden;
+}

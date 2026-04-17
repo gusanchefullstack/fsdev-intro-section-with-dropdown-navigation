@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <a href="/" class="header__logo" aria-label="snap home">
+          <img src="./assets/logo.svg" alt="snap" />
+        </a>
+
+        <button
+          class="header__menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <img
+            src="./assets/icon-menu.svg"
+            alt=""
+            class="header__menu-icon header__menu-icon--open"
+          />
+          <img
+            src="./assets/icon-close-menu.svg"
+            alt=""
+            class="header__menu-icon header__menu-icon--close"
+          />
+        </button>
+
+        <nav class="nav" id="mobile-menu" aria-label="Main navigation">
+          <div class="nav__overlay" aria-hidden="true"></div>
+          <div class="nav__content">
+            <ul class="nav__list" role="list">
+              <li class="nav__item nav__item--dropdown">
+                <button
+                  class="nav__link nav__link--dropdown"
+                  aria-expanded="false"
+                  aria-controls="dropdown-features"
+                >
+                  Features
+                  <img
+                    src="./assets/icon-arrow-down.svg"
+                    alt=""
+                    class="nav__arrow nav__arrow--down"
+                  />
+                  <img
+                    src="./assets/icon-arrow-up.svg"
+                    alt=""
+                    class="nav__arrow nav__arrow--up"
+                  />
+                </button>
+                <ul class="dropdown" id="dropdown-features" role="list">
+                  <li>
+                    <a href="#" class="dropdown__link">
+                      <img
+                        src="./assets/icon-todo.svg"
+                        alt=""
+                        class="dropdown__icon"
+                      />
+                      Todo List
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown__link">
+                      <img
+                        src="./assets/icon-calendar.svg"
+                        alt=""
+                        class="dropdown__icon"
+                      />
+                      Calendar
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown__link">
+                      <img
+                        src="./assets/icon-reminders.svg"
+                        alt=""
+                        class="dropdown__icon"
+                      />
+                      Reminders
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown__link">
+                      <img
+                        src="./assets/icon-planning.svg"
+                        alt=""
+                        class="dropdown__icon"
+                      />
+                      Planning
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav__item nav__item--dropdown">
+                <button
+                  class="nav__link nav__link--dropdown"
+                  aria-expanded="false"
+                  aria-controls="dropdown-company"
+                >
+                  Company
+                  <img
+                    src="./assets/icon-arrow-down.svg"
+                    alt=""
+                    class="nav__arrow nav__arrow--down"
+                  />
+                  <img
+                    src="./assets/icon-arrow-up.svg"
+                    alt=""
+                    class="nav__arrow nav__arrow--up"
+                  />
+                </button>
+                <ul class="dropdown" id="dropdown-company" role="list">
+                  <li>
+                    <a href="#" class="dropdown__link">History</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown__link">Our Team</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown__link">Blog</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav__item">
+                <a href="#" class="nav__link">Careers</a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#" class="nav__link">About</a>
+              </li>
+            </ul>
+
+            <div class="nav__auth">
+              <a href="#" class="nav__auth-link">Login</a>
+              <a href="#" class="nav__auth-link nav__auth-link--register"
+                >Register</a
+              >
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="hero__inner">
+        <section class="hero__content">
+          <h1 class="hero__title">Make<br />remote work</h1>
+          <p class="hero__description">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <a href="#" class="hero__cta">Learn more</a>
+          <div class="hero__clients">
+            <img src="./assets/client-databiz.svg" alt="Databiz" />
+            <img src="./assets/client-audiophile.svg" alt="Audiophile" />
+            <img src="./assets/client-meet.svg" alt="Meet" />
+            <img src="./assets/client-maker.svg" alt="Maker" />
+          </div>
+        </section>
+
+        <div class="hero__image">
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcset="./assets/image-hero-desktop.png"
+            />
+            <img
+              src="./assets/image-hero-mobile.png"
+              alt="Person working remotely on a laptop"
+            />
+          </picture>
+        </div>
+      </div>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by
+      <a href="https://github.com/gusanchefullstack">Gustavo Sanchez</a>.
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
